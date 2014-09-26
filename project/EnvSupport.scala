@@ -32,6 +32,7 @@ object EnvSupport {
 
     }
     catch {
+      case e: java.lang.ClassNotFoundException =>
       case e: NoSuchFieldException =>
         val classes = classOf[java.util.Collections].getDeclaredClasses
         val env = System.getenv()
